@@ -1,0 +1,30 @@
+use('NotFLIX'); 
+ 
+// The drop() command destroys all data from a collection. 
+// Make sure you run it against the correct database and collection. 
+db.data.drop(); 
+
+// Insert a few documents into the stock collection. 
+db.data.insertMany([ 
+  _id: Number,
+  accountID: Number,
+  userName: String,
+  titleID: Number,
+  userAction: String,
+  dateAndtime: Date,
+  pointOfinteraction: String,
+  typeOfinteraction: String
+]);
+
+use('NotFLIX'); 
+db.getCollection('data') 
+  .find( 
+    { 
+    }, 
+    { 
+      item: 1 
+    } 
+  ) 
+  .sort({ 
+      item: 1 
+  }); 
